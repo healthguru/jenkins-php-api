@@ -5,6 +5,11 @@
     "homepage": "http://github.com/healthguru/jenkins-php-api",
     "version": "0.0.1",
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+        "lib-curl": "*",
+        "lib-xml": "*"
+    },
+    "autoload": {
+        "psr-0": { "Jenkins": "" }
     }
 }
