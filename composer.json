@@ -1,0 +1,10 @@
+{
+    "name": "healthguru/jenkins-php-api",
+    "description": "PHP wrapper for Jenkins Web API",
+    "keywords": ["api","php", "jenkins"],
+    "homepage": "http://github.com/healthguru/jenkins-php-api",
+    "version": "0.0.1",
+    "require": {
+        "php": ">=5.3.0"
+    },
+}
