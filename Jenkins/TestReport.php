@@ -103,19 +103,21 @@ class Jenkins_TestReport
     return $this->testReport->suites;
   }
 
-  /**
-   *
-   * @return stdClass
-   */
+    /**
+     *
+     * @param $id
+     * @return stdClass
+     */
   public function getSuite($id)
   {
     return $this->testReport->suites[$id];
   }
 
-  /**
-   *
-   * @return string
-   */
+    /**
+     *
+     * @param $id
+     * @return string
+     */
   public function getSuiteStatus($id)
   {
     $suite = $this->getSuite($id);

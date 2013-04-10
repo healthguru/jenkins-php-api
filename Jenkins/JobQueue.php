@@ -77,6 +77,7 @@ class Jenkins_JobQueue
 
   /**
    * @param \Jenkins $jenkins
+   * @return $this
    */
   public function setJenkins(Jenkins $jenkins)
   {
