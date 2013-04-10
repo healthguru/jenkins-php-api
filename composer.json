@@ -14,5 +14,6 @@
             "Jenkins": "",
             "" : "Jenkins/"
         }
-    }
+    },
+    "include-path": [".", "Jenkins/"]
 }
