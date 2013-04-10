@@ -3,21 +3,19 @@
 class Jenkins
 {
 
-    /**
-     * @var string
-     */
-    protected $baseUrl = 'http://jenkins.aws.healthgurumedia.com';
+    /** @var $baseUrl string */
+    public $baseUrl;
+
+    /** @var $jenkins null|Object */
+    public $jenkins = null;
 
     /**
-     * @var null|Object
+     * @param string $baseUrl
+     * @return string
      */
-    protected $jenkins = null;
-
     public function initWithBaseUrl($baseUrl) {
         $baseUrl = 'http://' . $baseUrl;
         $this->baseUrl = $baseUrl;
-
-        echo $this->baseUrl."\n";
 
         if($this->jenkins === null) {
             $this->initialize();
@@ -371,7 +369,7 @@ class Jenkins
      */
     public function getComputer($computerName)
     {
-        $url = sprintf('%s/computer/%s/api/json', $this->baseUrl, $computerName);
+        $url = sprintf("%s/computer/%s/api/json", $this->baseUrl, $computerName);
         $curl = curl_init($url);
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -379,7 +377,8 @@ class Jenkins
 
         if (curl_errno($curl))
         {
-            throw new RuntimeException(sprintf('Error during getting information for computer %s on %s', $computerName, $this->baseUrl));
+            $curlError = curl_error($curl);
+            throw new RuntimeException("Error during getting information for computer {$computerName} on {$this->baseUrl}, curl_error={$curlError}, {$url}");
         }
         $infos = json_decode($ret);
 
