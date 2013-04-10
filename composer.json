@@ -10,7 +10,9 @@
         "ext-xml": "*"
     },
     "autoload": {
-        "classmap" : ["Jenkins.php", "Jenkins/"]
-    },
-    "include_path": [".", "Jenkins/"]
+        "psr-0": {
+            "Jenkins": "",
+            "" : "Jenkins/"
+        }
+    }
 }
