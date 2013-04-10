@@ -6,12 +6,12 @@ class Jenkins
   /**
    * @var string
    */
-  private $baseUrl;
+  protected $baseUrl;
 
   /**
    * @var null
    */
-  private $jenkins = null;
+  protected $jenkins = null;
 
   /**
    * @param string $baseUrl
